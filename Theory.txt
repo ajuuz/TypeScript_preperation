@@ -1,0 +1,57 @@
+1. What is typescript ?
+- Typescript is a super set of javascript.
+- Detect error in the code without running it.
+- it needs to be converted to JS to run.
+- The compilation process remove all the types.
+
+2. What is Infer types (implicit types)? 
+- Types that typescript automatically recognize type without the need of specifying it
+eg ; let userName = 'ajmal';
+     userName = 0;    ie, there will be an error says number cannot be assigned to string
+
+
+3. What is Defining Type (Explicit types) ?
+- Types that we explicitly specifying 
+
+some examples are : - 
+   - let userName2 : string = "ajmal ea";
+
+   - let phone_number : number = 87654321;
+    
+   - let skills : string[] = ['html','css','js','ts'];
+    
+   - let count : number[] = [1,2,3,4];
+    
+   - let emptyArray : [] = [];
+    
+   - let userDetail : {name:string,age:number} = {
+        name:"ajmal",
+        age:22
+    }
+
+
+4 . What is Interface ? 
+
+- when declaring objects if there is lot more properties present in the object we have to mention in the type.
+- and the second condition is if there is same amount of same properties there in another object . 
+- we can specify the properties in interface . and reuse in both objects.
+
+- interface is a way to define structure of an object.
+- ensure that object follow specific format by specifying properties and their types.
+
+interface Details {
+    name:string;
+    age:number;
+    salary:number;
+}
+
+let employeeDetails : Details = {
+    name:"employee1",
+    age:20,
+    salary:100000
+}
+let managerDetails : Details = {
+    name:"ajmal",
+    age:22,
+    salary:1000000
+}
