@@ -55,3 +55,32 @@ let managerDetails : Details = {
     age:22,
     salary:1000000
 }
+
+
+
+5. UNION operator ( string | number )
+
+type DetailsType = {
+    name:string,
+    age:number | string,
+    salary:number,
+}
+
+- here by mentioning union operator in age . we can give age in either string or phone_number.
+
+6.how to specify that the array contains multiple types ?
+
+- let array : (string|number|boolean)[]=[1,2,3,"string1",true]
+
+
+7.  age:number|string;    // UNION   - we can insert either number or string . just like or operator
+    salary?:number;     //OPTIONAL  - these fields are optional . even if we omit there will be no error
+
+
+8 . HOw can we define type for functions ?
+
+    function getUserName (userDetail : DetailsType) : string {      => here were are mentioning the string to specify that the function return string datatype
+        return userDetail.name;
+    }
+
+    getUserName(userDetail)
