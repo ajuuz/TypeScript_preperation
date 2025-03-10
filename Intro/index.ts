@@ -73,3 +73,35 @@ function getUserDetails(userDetails:{name:string,age:number}){
 }
 
 getUserDetails({name:"ajmal",age:22})
+
+
+
+//named type or custom type
+type statusType = 'pending' | 'completed' | 'failed' | '';
+
+let currentStatus : statusType = '';
+
+function hello(): void{
+    console.log(this)
+}
+
+
+//function overloading
+
+function add(num1:number,num2:number):number;
+function add(num1:string,num2:string):string;
+
+function add(num1:any,num2:any):any{
+    return num1+num2;
+}
+add(10,20)
+add("10","20")
+
+
+//generic
+
+function getAge<T>(age:T):T{
+    return age;
+}
+getAge<number>(20)
+getAge<string>("20")
