@@ -94,3 +94,112 @@ type DetailsType = {
 11. What is Generic ?
    - Generic in typescript allows us to create reusable and type safe components like function , class, interface.
 
+12 .HOw to  extend the Type ?
+    type type1 ={
+    name: string,
+    age:number,
+    }
+
+    type type2 = type1 & {
+        role:string
+    }
+    // type 2 contains properties of type 1 and add on property role ..
+
+13. How to extend the Interface ? (we use oops concept extends)
+    interface type3 {
+    name:string,
+    age:number
+    }
+
+    interface type4 extends type3{
+        role:string
+    }
+
+14. What is keyof and typeof ?
+    These are used to build enums 
+
+
+15. What are the Utility types? 
+   Utility types are basically generic type!!
+
+  i) readonly - makes the properties readonly
+  type User = {
+    readonly name:string,
+    age:number
+    }
+
+    const userDetails : User ={
+    name:"ajmal",
+    age:22
+    }
+
+    const adminDetails:Readonly<User>={
+    name:"admin",
+    age:40
+    }
+
+ii) partial (optional) - makes the property optional
+    type User = {
+    name:string,
+    age:number
+    }
+
+    const userDetails : Partial<User> ={
+        name:"ajmal",
+    }
+
+iii) Required
+    type User = {
+        name:string,
+        age?:number
+    }
+
+    const userDetails : Required<User> ={
+        name:"ajmal",
+        age:22
+    }
+
+iv) Pick - create a new type by picking the properties from one type 'User' type
+    type User = {
+        name:string;
+        age?:number;
+        salary:number;
+        phone:number,
+        houseName:string,
+        pincode:number,
+        place:string
+    }
+    
+    const userDetails : Pick<User,"name"|"age"|"pincode"> ={
+        name:"ajmal",
+        age:22,
+        pincode:653322
+    }
+
+v) Omit - create a new type by omiting some properties from one type 'User'
+    type User = {
+        name:string;
+        age?:number;
+        salary:number;
+        phone:number,
+        houseName:string,
+        pincode:number,
+        place:string
+    }
+    
+    const userDetails : Omit<User,"name"|"age"|"pincode"> ={
+        salary:10000000,
+        phone:987654321,
+        houseName:Ettukalil,
+        place:kalamassery,
+    }
+
+vi) Exclude 
+    type statusType = 'completed' | 'pending' | 'failed';
+    const statuss : Exclude<statusType,"pending"> = 'completed';
+
+
+vii) What is tuple ?
+    Tuple is a special type of array in which there will be a specified number of elements and their types.
+
+    
