@@ -357,7 +357,8 @@
 // person.displayInfo();
 
 
-//1.Inheritance
+/////////OOPS Principles///////////
+        ///1.Inheritance////
 // class Animal {
 //     name : string;
 //    constructor(name:string){
@@ -385,7 +386,7 @@
 // dog1.bark()
 
 
-//2.Encapsulation 
+        ///2.Encapsulation/// 
 // class BankAccount {
 //    private balance : number=0;
 
@@ -405,7 +406,21 @@
 // account.deposite(100);
 // console.log(account.getBalance())
 
-//3. Polymorphism overriding
+
+        //////3.Polymorphism///////
+//a.Polymorphism OVerloading///
+    // class Maths{
+    //     add(num1:string,num2:string):string;
+    //     add(num1:number,num2:number):number;
+    //     add(num1:any,num2:any):any{
+    //         return num1+num2
+    //     }
+    // }
+    // const math = new Maths();
+    // console.log(math.add(1,2));
+    // console.log(math.add("ajmal","ea"));
+
+//b. Polymorphism overriding//
 // class Animal {
 //    makeSound():void{
 //       console.log("Animal sound");
@@ -425,7 +440,7 @@
 // dog.defaultSound()
 
 
-// 4.Abstraction
+        /// 4.Abstraction///
 //a).interface method for abstraction
 // interface Vehicle {
 //    start():void;
@@ -458,4 +473,35 @@
 // const car = new Car()
 // car.start()
 
+
+/////////////////////////PENDING///////////////////////////////////////
+/// 1.Mixins ///
+// function CanEat<T extends new (...arg:any[])=>{}>(Base:T){
+//     return class extends Base{
+//         canEat():void{
+//             console.log("eating")
+//         }
+//     }
+// }
+
+// function CanSleep<T extends new (...arg:any[])=>{}>(Base:T){
+//     return class extends Base{
+//         canSleep():void{
+//             console.log("sleeping")
+//         }
+//     }
+// }
+
+// class Animal {
+//     display():void{
+//         console.log('base class')
+//     }
+// }
+
+// class Lion extends CanEat(CanSleep(Animal)){}
+
+// const lion = new Lion();
+// lion.canEat();
+// lion.canSleep();
+// lion.display()
 

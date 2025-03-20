@@ -129,7 +129,7 @@
 //     console.log(orderId+" "+status)
 // }
 // getStatus("12324",statusType.COMPLETED);
-//3.keyof typeof
+// 3.keyof typeof
 // const statusType={
 //     PENDING:"pending",
 //     COMPLETED:"completed",
@@ -139,6 +139,7 @@
 //     console.log(orderId+" "+status)
 // }
 // getStatus('1246',"PENDING")
+// const orderStatus : keyof typeof s
 //UTILITY TYPES
 // 1. Read Only
 // type User = {
@@ -259,7 +260,8 @@
 // const person = new Person('ajmal',22,'India');
 // console.log(person.name)
 // person.displayInfo();
-//Inheritance
+/////////OOPS Principles///////////
+///1.Inheritance////
 // class Animal {
 //     name : string;
 //    constructor(name:string){
@@ -283,7 +285,7 @@
 // dog1.makeSound()
 // dog1.name="jkldfs";
 // dog1.bark()
-//Encapsulation 
+///2.Encapsulation/// 
 // class BankAccount {
 //    private balance : number=0;
 //    deposite(amount:number):void{
@@ -300,19 +302,80 @@
 // console.log(account.getBalance())
 // account.deposite(100);
 // console.log(account.getBalance())
-class Animal {
-    makeSound() {
-        console.log("Animal sound");
+//////3.Polymorphism///////
+//a.Polymorphism OVerloading///
+class Maths {
+    add(num1, num2) {
+        return num1 + num2;
     }
 }
-class Dog extends Animal {
-    makeSound() {
-        console.log("bark");
-    }
-    defaultSound() {
-        super.makeSound();
-    }
-}
-const dog = new Dog();
-dog.makeSound();
-dog.defaultSound();
+const math = new Maths();
+console.log(math.add(1, 2));
+console.log(math.add("ajmal", "ea"));
+//b. Polymorphism overriding//
+// class Animal {
+//    makeSound():void{
+//       console.log("Animal sound");
+//    }
+// }
+// class Dog extends Animal{
+//    makeSound(): void {
+//        console.log("bark")
+//    }
+//    defaultSound():void{
+//       super.makeSound()
+//    }
+// }
+// const dog = new Dog();
+// dog.makeSound()
+// dog.defaultSound()
+/// 4.Abstraction///
+//a).interface method for abstraction
+// interface Vehicle {
+//    start():void;
+// }
+// class Car implements Vehicle {
+//     start(): void {
+//         console.log('car starts with key')
+//     }
+// }
+//b).abstract method for abstraction
+// abstract class Vehicle{
+//    abstract start():void;
+//    stop():void{
+//       console.log("vehicle stoped")
+//    }
+// }
+// class Car extends Vehicle{
+//    start():void{
+//       console.log("car start with key")
+//    }
+// }
+// const car = new Car()
+// car.start()
+/////////////////////////PENDING///////////////////////////////////////
+/// 1.Mixins ///
+// function CanEat<T extends new (...arg:any[])=>{}>(Base:T){
+//     return class extends Base{
+//         canEat():void{
+//             console.log("eating")
+//         }
+//     }
+// }
+// function CanSleep<T extends new (...arg:any[])=>{}>(Base:T){
+//     return class extends Base{
+//         canSleep():void{
+//             console.log("sleeping")
+//         }
+//     }
+// }
+// class Animal {
+//     display():void{
+//         console.log('base class')
+//     }
+// }
+// class Lion extends CanEat(CanSleep(Animal)){}
+// const lion = new Lion();
+// lion.canEat();
+// lion.canSleep();
+// lion.display()

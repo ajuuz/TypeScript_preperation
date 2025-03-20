@@ -199,7 +199,31 @@ vi) Exclude
     const statuss : Exclude<statusType,"pending"> = 'completed';
 
 
-vii) What is tuple ?
+16. What is tuple ?
     Tuple is a special type of array in which there will be a specified number of elements and their types.
 
-    
+
+17 What is Mixins ?
+   - In Typescript Mixins is a way to reuse code across mulitple classes without using traditional class inheritance
+   - In Typescript , multiple inheritance is not allowed . one class extends one class.
+   - Mixins combines the behaviour from mulitple sources
+
+
+18 What are the OOPS Concepts in Type Script ?
+   i) inheritance.
+
+   ii)Polymorphism :-
+    -There are Two Types of Polymorphism - Early Binding Polymorphism and Late Binding Polymorphism.
+    --Early Binding Polymorphism
+      > Also called static Polymorphism and Compile Time Polymorphism.
+      > The method to be executed is determined at compile time hence named Compile time Polymorphism.
+      > This Polymorphism is achieved using method overloading.
+
+    --Late Binding Polymorphism
+      > Also called Dynamic Polymorphism and Run time Polymorphism.
+      > The method to be executed is determined at run time .
+      > This Polymorphism is achieved using method Overriding.
+
+    iii)Encapsulation
+
+    iv)Abstraction
