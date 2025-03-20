@@ -1,6 +1,6 @@
 "use strict";
-// // Types
-// //infer or Implicity type
+// Types
+//infer or Implicity type
 // let userName = 'ajmal ea';
 // let subcribers = 30_000;
 // //Defining Types or Explicit Types
@@ -204,14 +204,115 @@
 // 6. Exclude
 // type statusType = 'completed' | 'pending' | 'failed';
 // const statuss : Exclude<statusType,"pending"> = 'completed';
-// any / unknown / never / void / null
-let userName = "ajmal";
-const newValue = userName;
-//never - never used when the function throws an error or if the code runs in infinte loop
-function throwError(message) {
-    throw new Error(message);
+// // any / unknown / never / void / null
+//  let userName :unknown = "ajmal";
+//  const newValue = userName as string;
+//  //never - never used when the function throws an error or if the code runs in infinte loop
+//  function throwError(message:string):never{
+//     throw new Error(message)
+//  }
+//  //void - executes some codes but doesnot return anything
+//  function logMessage(message:string):void{
+//     console.log(message)
+//  }
+//  //tuple 
+//  let sampleTuple:[number,string] = [1,"ajmal"];
+//CLASS
+// class Car {
+//    license:number;
+//    constructor(num:number=100){
+//       this.license=num;
+//    }
+//    move(){
+//    }
+// }
+// const car = new Car(10);
+// console.log(car)
+// class Car {
+//    model:string;
+//    year:number;
+//    constructor(model:string,year:number){
+//       this.model=model;
+//       this.year=year;
+//    }
+//    display():void{
+//       console.log(`Car model: ${this.model} & Year : ${this.year}`)
+//    }
+// }
+// const car = new Car('Toyota',2022)
+// car.display()
+//Access Modifiers 
+// public , private , protected
+// class Person {
+//    public name : string;
+//    private age : number;
+//    protected country : string;
+//    constructor(name:string,age:number,country:string){
+//       this.name = name;
+//       this.age = age;
+//       this.country = country;
+//    }
+//    public displayInfo():void{
+//       console.log(`Name ${this.name} and Age ${this.age}`)
+//    }
+// }
+// const person = new Person('ajmal',22,'India');
+// console.log(person.name)
+// person.displayInfo();
+//Inheritance
+// class Animal {
+//     name : string;
+//    constructor(name:string){
+//       this.name = name;
+//    }
+//    makeSound():void{
+//       console.log('animal makes a sound');
+//    }
+// }
+// class Dog extends Animal {
+//    age:number=22;
+//   constructor(name:string){
+//       super(name)
+//   }
+//   bark():void{
+//    console.log(`${this.name} barks!`)
+//   }
+// }
+// const dog1 = new Dog('jimmy');
+// dog1.bark()
+// dog1.makeSound()
+// dog1.name="jkldfs";
+// dog1.bark()
+//Encapsulation 
+// class BankAccount {
+//    private balance : number=0;
+//    deposite(amount:number):void{
+//       if(amount> 0){
+//          this.balance+=amount;
+//          console.log(`deposite amount ${amount}`)
+//       }
+//    }
+//    getBalance():number{
+//      return this.balance
+//    }
+// }
+// const account = new BankAccount();
+// console.log(account.getBalance())
+// account.deposite(100);
+// console.log(account.getBalance())
+class Animal {
+    makeSound() {
+        console.log("Animal sound");
+    }
 }
-//void - executes some codes but doesnot return anything
-function logMessage(message) {
-    console.log(message);
+class Dog extends Animal {
+    makeSound() {
+        console.log("bark");
+    }
+    defaultSound() {
+        super.makeSound();
+    }
 }
+const dog = new Dog();
+dog.makeSound();
+dog.defaultSound();

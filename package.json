@@ -1,5 +1,15 @@
 {
   "devDependencies": {
     "typescript": "^5.8.2"
-  }
+  },
+  "name": "typescript",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node public/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
